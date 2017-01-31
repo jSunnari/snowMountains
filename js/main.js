@@ -3,7 +3,8 @@ bg.src = "img/bg.png";
 
 function initCanvas(){
     var ctx = document.getElementById('snow').getContext('2d');
-    var cW = ctx.canvas.width, cH = ctx.canvas.height;
+    var cW = ctx.canvas.width,
+        cH = ctx.canvas.height;
     var flakes = [];
 
     function addFlake(){
