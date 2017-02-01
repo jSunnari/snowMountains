@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Cookie|Fredericka+the+Great|Josefin+Slab');
 
+@keyframes dropIcons {
+  0% {
+    visibility: visible;
+    transform: translateY(-300%);
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 #root {
   width: 100vw;
   height: 100vh;
@@ -61,7 +74,6 @@
       background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%,rgba(68,68,68,0) 90%,rgba(76,76,76,0) 100%);
     }
   }
-
 }
 
 #contact {
@@ -70,8 +82,36 @@
   justify-content: center;
 
   img {
+    visibility: hidden;
+
+
+    animation-name: dropIcons;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.78, 1.15);
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+
+
     margin: 1em;
     width: 5em;
+    //padding: 4px;
+    //border-radius: 50%;
+  }
+
+  #mail-icon {
+    animation-delay: 1s;
+  }
+
+  #linkedin-icon {
+    animation-delay: 1.2s;
+  }
+
+  #github-icon {
+    animation-delay: 1.4s;
+  }
+
+  img:hover {
+    //box-shadow: inset 0 0 0 2px black;
   }
 
 }

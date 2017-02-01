@@ -20,8 +20,9 @@ function initCanvas(){
     function snow(){
         addFlake();
         addFlake();
+        addFlake();
         for(var i = 0; i < flakes.length; i++){
-            ctx.fillStyle = "rgba(255,255,255,.85)";
+            ctx.fillStyle = "rgba(255,255,255,.9)";
             ctx.beginPath();
             ctx.arc(flakes[i].x, flakes[i].y+=flakes[i].s*.5, flakes[i].s*.5, 0, Math.PI*2, false);
             ctx.fill();
