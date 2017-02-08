@@ -2,7 +2,6 @@
 
 @keyframes dropIcons {
   0% {
-    visibility: visible;
     transform: translateY(-300%);
     opacity: 0;
   }
@@ -13,6 +12,27 @@
   }
 }
 
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
 #bg {
   position: absolute;
@@ -37,6 +57,13 @@
   #header {
     text-align: center;
     cursor: default;
+
+    visibility: hidden;
+    animation-name: fadeIn;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 
     h1 {
       font-family: 'Amatic SC', cursive;
@@ -78,6 +105,10 @@
       animation-delay: 1.4s;
     }
 
+    a {
+      transition: opacity 0.5s ease;
+    }
+
     a:hover {
       //box-shadow: inset 0 0 0 2px black;
       opacity: 0.75;
@@ -91,27 +122,77 @@
     flex: 1 1 auto;
     justify-content: flex-end;
 
+
+    .hr-div {
+      visibility: hidden;
+      animation-name: slideUp;
+      animation-iteration-count: 1;
+      animation-timing-function: cubic-bezier(0, 2.8, 1, 2.3);
+      animation-duration: .8s;
+      animation-fill-mode: forwards;
+      animation-delay: 3s;
+      p {
+        color: rgb(225,225,225);
+        font-size: 1.8em;
+      }
+
+      .left-hr {
+        background: -webkit-linear-gradient(left, rgba(76, 76, 76, 0) 0%, rgba(68, 68, 68, 0) 10%, rgb(225,225,225) 100%);
+      }
+
+      .right-hr {
+        background: -webkit-linear-gradient(left, rgb(225,225,225) 0%, rgba(68, 68, 68, 0) 90%, rgba(76, 76, 76, 0) 100%);
+      }
+    }
     #skills-icons {
+      visibility: hidden;
+      animation-name: slideUp;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in;
+      animation-duration: .8s;
+      animation-fill-mode: forwards;
+      animation-delay: 3s;
+
+
       display: flex;
       align-items: center;
 
       background-color: rgba(0,0,0,.2);
       border-radius: 8px 8px 0 0;
-      padding: 5px 10px 10px;
+      padding: 10px 8px 10px;
       max-height: 50px;
 
       .skills-icon-container {
         padding-left: 2.5px;
         padding-right: 2.5px;
 
+        align-self: stretch;
+        margin: auto;
+
+
+
         img {
-          width: 50px; //TEST
+          width: 45px; //TEST
+          transition: width 0.15s ease-out;
+
+        }
+
+        p {
+          color: rgb(225,225,225);
+          font-size: .75em;
+          margin: auto;
+          text-align: center;
+          display: none;
         }
       }
 
       .skills-icon-container:hover {
         img {
           width: 60px;
+          display: none;
+        }
+        p {
+          display: inherit;
         }
 
       }

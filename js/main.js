@@ -1,3 +1,42 @@
+// media query event handler
+if (matchMedia) {
+    var ipad = window.matchMedia("(min-width: 367px) and (max-width: 768px)");
+    var iphone = window.matchMedia("(max-width: 376px");
+
+    //devices.addListener(widthChange);
+    ipad.addListener(widthChange);
+    iphone.addListener(widthChange)
+   // devices[1].addListener(widthChange);
+
+
+
+    /*
+    ipad.addListener(widthChange);
+    iphone.addListener(widthChange);
+    widthChange(ipad);
+    widthChange(iphone);
+    */
+}
+
+// media query change
+function widthChange(devices) {
+    if (devices.matches) {
+        console.log("ipad, width is smaller than 769px");
+        document.getElementById('bg').setAttribute("width", "900");
+    }
+
+    else if (devices.matches) {
+        console.log("iphone, width is smaller than 376px");
+        document.getElementById('bg').setAttribute("width", "750");
+    }
+
+    else {
+        console.log("windows is desktop");
+        document.getElementById('bg').setAttribute("width", "1920");
+    }
+
+}
+
 var bg = new Image();
 bg.src = "img/bg.png";
 
