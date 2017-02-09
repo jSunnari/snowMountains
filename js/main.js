@@ -1,40 +1,32 @@
-// media query event handler
 if (matchMedia) {
-    var ipad = window.matchMedia("(min-width: 367px) and (max-width: 768px)");
-    var iphone = window.matchMedia("(max-width: 376px");
+    var tablet = window.matchMedia("(min-width: 415px) and (max-width: 768px)");
+    var mobile = window.matchMedia("(max-width: 414px");
+    var largeTablet = window.matchMedia("(min-width: 768px) and (max-width: 1024px)");
 
-    //devices.addListener(widthChange);
-    ipad.addListener(widthChange);
-    iphone.addListener(widthChange)
-   // devices[1].addListener(widthChange);
-
-
-
-    /*
-    ipad.addListener(widthChange);
-    iphone.addListener(widthChange);
-    widthChange(ipad);
-    widthChange(iphone);
-    */
+    tablet.addListener(windowListener);
+    windowListener(tablet);
 }
 
-// media query change
-function widthChange(devices) {
-    if (devices.matches) {
-        console.log("ipad, width is smaller than 769px");
+function windowListener() {
+    if (mobile.matches) {
+        console.log("mobile, width is smaller than 376px");
+        document.getElementById('bg').setAttribute("width", "750");
+    }
+
+    else if (tablet.matches) {
+        console.log("tablet, width is smaller than 769px");
         document.getElementById('bg').setAttribute("width", "900");
     }
 
-    else if (devices.matches) {
-        console.log("iphone, width is smaller than 376px");
-        document.getElementById('bg').setAttribute("width", "750");
+    else if (largeTablet.matches) {
+        console.log("largeTablet, width is smaller than 769px");
+        document.getElementById('bg').setAttribute("width", "950");
     }
 
     else {
         console.log("windows is desktop");
         document.getElementById('bg').setAttribute("width", "1920");
     }
-
 }
 
 var bg = new Image();
