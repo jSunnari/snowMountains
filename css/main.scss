@@ -268,14 +268,15 @@ $grey: rgb(225,225,225);
 
   //ändra dessa:
   .skills-icon-container {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 20% !important;
+    width: inherit !important;
+    padding-left: .2em !important;
+    padding-right: .2em !important;
+    margin: auto !important;
 
     img {
-      margin-left: auto !important;
-      margin-right: auto !important;
-      display: block !important;
+      margin-left: inherit !important;
+      margin-right: inherit !important;
+      display: inherit !important;
     }
   }
 }
